@@ -1,0 +1,61 @@
+.card {
+    position: relative;
+    width: 200px;
+    height: 300px;
+    perspective: 1000px;
+    cursor: pointer;
+  
+    &-face {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      backface-visibility: hidden;
+      transition: transform 0.6s ease-in-out;
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+      font-size: 1.5rem;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+    }
+  
+    &-front {
+      background: #fff;
+      color: #333;
+    }
+  
+    &-back {
+      background: #333;
+      color: #fff;
+      transform: rotateY(180deg);
+    }
+  
+    &.flipped .card-front {
+      transform: rotateY(180deg);
+    }
+  
+    &.flipped .card-back {
+      transform: rotateY(360deg);
+    }
+
+    img {
+        width:200px;
+        height:200px;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px
+    }
+
+    .card-front {
+        background: linear-gradient(to right, red, blue); /* Gradient */
+        -webkit-mask-image: url('/images/diamonds.svg'); /* SVG as a mask */
+        -webkit-mask-size: 64px; /* Size of the diamond pattern */
+        -webkit-mask-repeat: repeat;
+        mask-image: url('/images/diamonds.svg'); /* For non-Webkit browsers */
+        mask-size: 64px;
+        mask-repeat: repeat;
+        background-color: green;
+        background-size: cover, 64px; /* Size for gradient and diamonds */
+        background-repeat: no-repeat, repeat; /* No repeat for gradient, repeat for diamonds */
+        background-position: center, center;
+    }
+  }
