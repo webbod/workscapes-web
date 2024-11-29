@@ -35,7 +35,7 @@ function App() {
       <div>
         {theme.description.map((description) => <p>{description}</p>)}
       </div>
-      <Grid axes={theme.axes} id="grid-1" archetypes={themedArchetypes} onSquareClick={handleSquareClick} />
+      <Grid id="grid-1" archetypes={themedArchetypes} onSquareClick={handleSquareClick} />
 
       <div>
         {archetypes.map((archetype) => <span> {archetype.theme}. {archetype.title} </span>)}

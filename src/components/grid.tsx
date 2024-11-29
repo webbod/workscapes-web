@@ -1,16 +1,13 @@
 import "../styles/grid.scss";
 import Archetype from "../models/archetype";
-import Axes from "../models/axes";
-
 
 type GridProps = {
-  axes: Axes;
   id: string;
   archetypes: Archetype[];
   onSquareClick: (gridId: string, squareId: number, archetype: string) => void;
 };
 
-function Grid({ axes, id, archetypes, onSquareClick }: GridProps) {
+function Grid({id, archetypes, onSquareClick }: GridProps) {
     return (
       <div className="grid-container">
 
